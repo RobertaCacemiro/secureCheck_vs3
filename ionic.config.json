@@ -1,0 +1,7 @@
+{
+  "name": "secureCheck_vs3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
