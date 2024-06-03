@@ -1,0 +1,75 @@
+ion-toolbar {
+  --background: #fffafa;
+  --color: black;
+  --ion-toolbar-background: #fffafa;
+  --ion-toolbar-border-color: transparent;
+  --ion-toolbar-box-shadow: none;
+}
+
+.form-wrapper {
+  padding: 0 20px 0 20px;
+  background-color: #fffafa;
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 30%;
+}
+
+.title {
+  color: #0B2474;
+  font-weight: bold;
+  font-size: xx-large;
+  text-align: center;
+  margin: 40px 0 10px 0;
+}
+
+ion-item {
+  margin-top: 10px;
+  --inner-border-width: 0;
+  --outer-border-width: 0;
+  --background: transparent;
+}
+
+ion-input {
+  --padding-start: 10px;
+  --padding-end: 8px;
+}
+
+.custom-ion-item {
+  --background: transparent;
+  --color: black;
+  --inner-padding-top: 0px;
+  --inner-padding-bottom: 0px;
+}
+
+.custom-ion-input,
+.custom-ion-select {
+  border: 2px solid #0B2474;
+  border-radius: 10px;
+  padding: 10px;
+
+}
+
+ion-item.custom-ion-item ion-input,
+ion-item.custom-ion-item ion-select {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.btn-cancel,
+.btn-submit {
+  color: white;
+  margin-top: 40px;
+  text-transform: uppercase;
+}
+
+.btn-cancel {
+  --background: #FF2222;
+}
+
+.btn-submit {
+  --background: #0B2474;
+}

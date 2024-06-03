@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="form-wrapper">
+    <h1 class="title">CADASTRO</h1>
+    <form [formGroup]="registerForm">
+      <ion-item class="custom-ion-item">
+        <ion-input class="custom-ion-input" color="secondary" label="Identificação:" label-placement="floating"
+          type="text" formControlName="identificacao"></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-ion-item">
+        <ion-select class="custom-ion-select" label="Alarme" label-placement="floating" formControlName="alarme">
+          <ion-select-option value="S">Sim</ion-select-option>
+          <ion-select-option value="N">Não</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="custom-ion-item">
+        <ion-input class="custom-ion-input" label="CEP:" label-placement="floating" type="text" formControlName="cep"
+          (input)="buscarEndereco()"></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-ion-item">
+        <ion-input class="custom-ion-input" label="Logradouro:" label-placement="floating" type="text"
+          formControlName="logradouro"></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-ion-item">
+        <ion-input class="custom-ion-input" label="Bairro:" label-placement="floating" type="text"
+          formControlName="bairro"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-grid>
+          <ion-row class="ion-justify-content-center">
+            <ion-col size="auto">
+              <ion-button class="btn-cancel" shape="round" expand="block" (click)="clearForm()">Cancelar</ion-button>
+            </ion-col>
+            <ion-col size="auto">
+              <ion-button class="btn-submit" shape="round" expand="block" (click)="submit()">Concluir</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </form>
+  </div>
+
+</ion-content>
+
+<app-toolbar-navegation></app-toolbar-navegation> <!-- Barra de navegação -->
