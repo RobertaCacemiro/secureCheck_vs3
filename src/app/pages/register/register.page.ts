@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { LocationsService } from 'src/app/services/locations.service';
 import { HttpClient } from '@angular/common/http';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,7 @@ export class RegisterPage {
   registerForm: FormGroup;
   endereco: any = {};
 
-  constructor(private LocationsService: LocationsService, private http: HttpClient) {
+  constructor(private LocationsService: LocationsService, private http: HttpClient, private navCtrl: NavController) {
     this.registerForm = new FormGroup({
       identificacao: new FormControl(''),
       alarme: new FormControl(''),
@@ -52,6 +53,7 @@ export class RegisterPage {
       this.LocationsService.create_NewLocation(this.registerForm.value)
         .then(() => {
           console.log('Dados do formulário salvos com sucesso!');
+          this.navCtrl.navigateForward('/home');
         })
         .catch((error) => {
           console.error('Erro ao salvar os dados do formulário:', error);
@@ -63,6 +65,7 @@ export class RegisterPage {
 
   clearForm() {
     this.registerForm.reset();
+    this.navCtrl.navigateForward('/home');
   }
 
 }
